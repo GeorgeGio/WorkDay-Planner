@@ -4,21 +4,22 @@ var timeInterval = setInterval(function () {
 }, 1000)
 
 
-
-
-for (let i = 0; i <=8; i++) {
-
-    $(".container").append(
+function someFunction () {
+    // const items = [];
+    new Array(9).fill().forEach((acc, index) => {
+      let hour = moment( {hour: index + 9} ).format('h:mm A');
+      $(".container").append(
         `    
         <div class="row">
-        ${i+9}
+        <span class="col-2"> ${hour} </span>
         <textarea class="col-8"></textarea>
         
         <button> Save </button>
         </div>`)
     
-     
+    })
+  
+  }
 
-}
-
-$("textarea").attr("class", "future")
+someFunction();
+// $("textarea").attr("class", "future")
